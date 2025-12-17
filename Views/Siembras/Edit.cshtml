@@ -1,0 +1,54 @@
+@model actividad.Models.Siembra
+
+@{
+ ViewData["Title"] = "Editar Siembra";
+}
+
+<h2>Editar Siembra</h2>
+
+<form asp-action="Edit" method="post">
+ <div asp-validation-summary="All" class="text-danger mb-3"></div>
+ <input type="hidden" asp-for="Id" />
+ <div class="form-group">
+ <label>Cultivo</label>
+ <select class="form-control" asp-for="CultivoId" asp-items="@(new Microsoft.AspNetCore.Mvc.Rendering.SelectList(ViewData["Cultivos"] as System.Collections.IEnumerable, "Id", "Nombre"))">
+ <option value="">-- Seleccione --</option>
+ </select>
+ <span asp-validation-for="CultivoId" class="text-danger"></span>
+ </div>
+ <div class="form-group">
+ <label>Finca</label>
+ <select class="form-control" asp-for="FincaId" asp-items="@(new Microsoft.AspNetCore.Mvc.Rendering.SelectList(ViewData["Fincas"] as System.Collections.IEnumerable, "Id", "Nombre"))">
+ <option value="">-- Seleccione --</option>
+ </select>
+ <span asp-validation-for="FincaId" class="text-danger"></span>
+ </div>
+ <div class="form-group">
+ <label>Trabajador</label>
+ <select class="form-control" asp-for="TrabajadorId" asp-items="@(new Microsoft.AspNetCore.Mvc.Rendering.SelectList(ViewData["Trabajadores"] as System.Collections.IEnumerable, "Id", "Nombre"))">
+ <option value="">-- Seleccione --</option>
+ </select>
+ <span asp-validation-for="TrabajadorId" class="text-danger"></span>
+ </div>
+ <div class="form-group">
+ <label asp-for="Area"></label>
+ <input class="form-control" asp-for="Area" />
+ <span asp-validation-for="Area" class="text-danger"></span>
+ </div>
+ <div class="form-group">
+ <label asp-for="FechaSiembra"></label>
+ <input class="form-control" asp-for="FechaSiembra" type="date" />
+ <span asp-validation-for="FechaSiembra" class="text-danger"></span>
+ </div>
+ <div class="form-group">
+ <label asp-for="Observaciones"></label>
+ <textarea class="form-control" asp-for="Observaciones"></textarea>
+ <span asp-validation-for="Observaciones" class="text-danger"></span>
+ </div>
+ <button type="submit" class="btn btn-primary">Guardar</button>
+ <a class="btn btn-secondary" asp-action="Index">Cancelar</a>
+</form>
+
+@section Scripts {
+ @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

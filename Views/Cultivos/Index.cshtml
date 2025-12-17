@@ -1,0 +1,36 @@
+@model IEnumerable<actividad.Models.Cultivo>
+
+@{
+ ViewData["Title"] = "Cultivos";
+}
+
+<h2>Cultivos</h2>
+<p>
+ <a class="btn btn-primary" asp-action="Create">Crear nuevo cultivo</a>
+</p>
+<table class="table table-striped">
+ <thead>
+ <tr>
+ <th>Id</th>
+ <th>Nombre</th>
+ <th>Tipo</th>
+ <th>Area</th>
+ <th></th>
+ </tr>
+ </thead>
+ <tbody>
+ @foreach(var item in Model) {
+ <tr>
+ <td>@item.Id</td>
+ <td>@item.Nombre</td>
+ <td>@item.Tipo</td>
+ <td>@item.Area</td>
+ <td>
+ <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@item.Id">Ver</a>
+ <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+ <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+ </td>
+ </tr>
+ }
+ </tbody>
+</table>

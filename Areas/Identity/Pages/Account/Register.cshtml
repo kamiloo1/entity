@@ -1,0 +1,81 @@
+@page
+@model actividad.Areas.Identity.Pages.Account.RegisterModel
+@{
+    ViewData["Title"] = "Registro - AgroSoft";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-sm mt-5 border-success">
+                <div class="card-body p-5">
+                    <div class="text-center mb-4">
+                        <h2 class="card-title text-success mb-2">🌾 AgroSoft</h2>
+                        <p class="text-muted">Gestión Agropecuaria</p>
+                    </div>
+                    <hr class="border-success" />
+                    
+                    <h3 class="text-center mb-4">Crear Nueva Cuenta</h3>
+                    <p class="text-center text-muted mb-4">Únete a AgroSoft para gestionar tus cultivos, huertas y ganado de manera eficiente</p>
+                    
+                    <form id="register-form" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3" role="alert">
+                            @if (ViewData.ModelState.ErrorCount > 0)
+                            {
+                                <div class="alert alert-danger">
+                                    <strong>Error en el registro:</strong> Por favor, revisa los datos ingresados y asegúrate de cumplir con todos los requisitos.
+                                </div>
+                            }
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="Input.Email" class="form-label fw-bold">Correo Electrónico</label>
+                            <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="tu@correo.com" />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            <small class="form-text text-muted">Este correo será tu usuario para acceder al sistema</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="Input.Password" class="form-label fw-bold">Contraseña</label>
+                            <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Mínimo 6 caracteres" />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            <small class="form-text text-muted">
+                                <strong>Requisitos de seguridad:</strong><br />
+                                • Mínimo 6 caracteres<br />
+                                • Al menos una letra mayúscula<br />
+                                • Al menos una letra minúscula<br />
+                                • Al menos un número
+                            </small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="Input.ConfirmPassword" class="form-label fw-bold">Confirmar Contraseña</label>
+                            <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Repite tu contraseña" />
+                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                            <small class="form-text text-muted">Debe coincidir con la contraseña ingresada anteriormente</small>
+                        </div>
+                        
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <strong>🌱 Crear Cuenta en AgroSoft</strong>
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <hr class="my-4" />
+                    
+                    <div class="text-center">
+                        <p class="mb-2 text-muted">¿Ya tienes una cuenta en AgroSoft?</p>
+                        <a class="btn btn-outline-success" asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">
+                            Iniciar sesión
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

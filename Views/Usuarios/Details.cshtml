@@ -1,0 +1,31 @@
+@model actividad.Models.Usuario
+
+@{
+ ViewData["Title"] = "Detalle de Usuario";
+}
+
+<h2>Detalle</h2>
+<div>
+ <h4>Usuario</h4>
+ <hr />
+ <dl class="row">
+ <dt class = "col-sm-2">Id</dt>
+ <dd class = "col-sm-10">@Model.Id</dd>
+ <dt class = "col-sm-2">Nombre</dt>
+ <dd class = "col-sm-10">@Model.Nombre</dd>
+ <dt class = "col-sm-2">Correo</dt>
+ <dd class = "col-sm-10">@Model.Correo</dd>
+ <dt class = "col-sm-2">Telefono</dt>
+ <dd class = "col-sm-10">@Model.Telefono</dd>
+ <dt class = "col-sm-2">Numero Documento</dt>
+ <dd class = "col-sm-10">@Model.NumeroDocumento</dd>
+ <dt class = "col-sm-2">Role</dt>
+ <dd class = "col-sm-10">@Model.Role?.Nombre</dd>
+ <dt class = "col-sm-2">Activo</dt>
+ <dd class = "col-sm-10">@(Model.Activo == true ? "Sí" : "No")</dd>
+ </dl>
+</div>
+<p>
+ <a class="btn btn-secondary" asp-action="Index">Volver</a>
+ <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
+</p>

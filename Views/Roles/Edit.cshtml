@@ -1,0 +1,28 @@
+@model actividad.Models.Role
+
+@{
+ ViewData["Title"] = "Editar Role";
+}
+
+<h2>Editar Role</h2>
+
+<form asp-action="Edit" method="post">
+ <div asp-validation-summary="All" class="text-danger mb-3"></div>
+ <input type="hidden" asp-for="Id" />
+ <div class="form-group">
+ <label asp-for="Nombre"></label>
+ <input class="form-control" asp-for="Nombre" />
+ <span asp-validation-for="Nombre" class="text-danger"></span>
+ </div>
+ <div class="form-group">
+ <label asp-for="Descripcion"></label>
+ <input class="form-control" asp-for="Descripcion" />
+ <span asp-validation-for="Descripcion" class="text-danger"></span>
+ </div>
+ <button type="submit" class="btn btn-primary">Guardar</button>
+ <a class="btn btn-secondary" asp-action="Index">Cancelar</a>
+</form>
+
+@section Scripts {
+ @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

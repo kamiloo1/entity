@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "Inicio - AgroSoft";
+}
+
+<div class="container-fluid px-4 py-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 text-success mb-3">
+            <span class="me-2">🌾</span>Bienvenido al Sistema de Gestión Agropecuaria
+        </h1>
+        <p class="lead text-muted">Gestiona tus cultivos, huertas, siembras y más desde un solo lugar</p>
+        <hr class="border-success mx-auto" style="width: 100px; border-width: 3px;" />
+    </div>
+    
+    <div class="row g-4 mt-3">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-success">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <span style="font-size: 3rem;">🌱</span>
+                    </div>
+                    <h5 class="card-title text-success fw-bold mb-3">Cultivos</h5>
+                    <p class="card-text text-muted mb-4">Administra la información de tus cultivos, tipos, estados y fechas de siembra y cosecha.</p>
+                    <a class="btn btn-success btn-lg w-100" asp-controller="Cultivos" asp-action="Index">
+                        <strong>Ver Cultivos</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-success">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <span style="font-size: 3rem;">🏡</span>
+                    </div>
+                    <h5 class="card-title text-success fw-bold mb-3">Huertas</h5>
+                    <p class="card-text text-muted mb-4">Gestiona tus huertas, ubicaciones, responsables y observaciones detalladas.</p>
+                    <a class="btn btn-success btn-lg w-100" asp-controller="Huertas" asp-action="Index">
+                        <strong>Ver Huertas</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-success">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <span style="font-size: 3rem;">🌿</span>
+                    </div>
+                    <h5 class="card-title text-success fw-bold mb-3">Siembras</h5>
+                    <p class="card-text text-muted mb-4">Registra y controla tus siembras, áreas, estados y fechas de plantación.</p>
+                    <a class="btn btn-success btn-lg w-100" asp-controller="Siembras" asp-action="Index">
+                        <strong>Ver Siembras</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-5">
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm border-success">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <span style="font-size: 2.5rem;">👥</span>
+                    </div>
+                    <h5 class="card-title text-success fw-bold mb-3">Usuarios</h5>
+                    <p class="card-text text-muted mb-4">Administra los usuarios del sistema y sus permisos.</p>
+                    <a class="btn btn-outline-success btn-lg w-100" asp-controller="Usuarios" asp-action="Index">
+                        <strong>Gestionar Usuarios</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm border-success">
+                <div class="card-body text-center p-4">
+                    <div class="mb-3">
+                        <span style="font-size: 2.5rem;">🔐</span>
+                    </div>
+                    <h5 class="card-title text-success fw-bold mb-3">Roles</h5>
+                    <p class="card-text text-muted mb-4">Gestiona los roles y permisos del sistema.</p>
+                    <a class="btn btn-outline-success btn-lg w-100" asp-controller="Roles" asp-action="Index">
+                        <strong>Gestionar Roles</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

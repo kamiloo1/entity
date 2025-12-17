@@ -1,0 +1,29 @@
+@model actividad.Models.Siembra
+
+@{
+ ViewData["Title"] = "Detalle de Siembra";
+}
+
+<h2>Detalle</h2>
+<div>
+ <h4>Siembra</h4>
+ <hr />
+ <dl class="row">
+ <dt class = "col-sm-2">Id</dt>
+ <dd class = "col-sm-10">@Model.Id</dd>
+ <dt class = "col-sm-2">Cultivo</dt>
+ <dd class = "col-sm-10">@Model.Cultivo?.Nombre</dd>
+ <dt class = "col-sm-2">Finca</dt>
+ <dd class = "col-sm-10">@Model.Finca?.Nombre</dd>
+ <dt class = "col-sm-2">Trabajador</dt>
+ <dd class = "col-sm-10">@Model.Trabajador?.Nombre</dd>
+ <dt class = "col-sm-2">Area</dt>
+ <dd class = "col-sm-10">@Model.Area</dd>
+ <dt class = "col-sm-2">Observaciones</dt>
+ <dd class = "col-sm-10">@Model.Observaciones</dd>
+ </dl>
+</div>
+<p>
+ <a class="btn btn-secondary" asp-action="Index">Volver</a>
+ <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
+</p>
